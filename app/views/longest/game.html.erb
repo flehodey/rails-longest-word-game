@@ -1,0 +1,22 @@
+<h1>Longest#game</h1>
+<p>Find me in app/views/longest/game.html.erb</p>
+
+<form action="/game">
+  <label for="grid">How many letters ?</label>
+  <input type="text" id="query" name="query" placeholder="Ex 9 ?">
+  <input type="submit" value="Go on!">
+</form>
+
+
+
+<% @pretty_grid = @grid.join("") %>
+<%= @grid.join("   ") %>
+
+<form action="/score">
+  <label for="word">what is your word?</label>
+  <input type="text" id="word" name="word" placeholder="AUTf">
+  <input type="submit" value="Go on!">
+  <input type="hidden" name="start_time" value="<%= @start_time%>">
+  <input type="hidden" name="grid" value="<%= @pretty_grid%>">
+</form>
+
